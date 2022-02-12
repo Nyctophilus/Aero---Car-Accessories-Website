@@ -15,7 +15,12 @@
 
 <pre>
 1st Day: 11/2/2022
-first Dev session:      08:12 AM    ~   00:00 AM        ~ 00h 00m
+first Dev session:      08:12 AM    ~   09:32 AM        ~ 00h 00m
+
+2st Day: 12/2/2022
+first Dev session:      02:12 PM    ~   02:23 PM        ~ 00h 00m
+second Dev session:     06:28 PM    ~   06:35 PM        ~ 00h 00m
+third Dev session:      07:47 PM    ~   10:48 PM        ~ 00h 00m
 
 </pre>
 
@@ -39,10 +44,11 @@ TODO:
 - [ ] header search bar icon .js
 - [ ] landing page text , btn , change dynamically
 
-<br>
-<br>
-<br>
-🍬 Leave a :star:&nbsp;if you like it, Please!🤩
+- Original Design: demo.posthemes.com/pos_aero/layout3
+  <br>
+  <br>
+  <br>
+  🍬 Leave a :star:&nbsp;if you like it, Please!🤩
 
 <br>
 
