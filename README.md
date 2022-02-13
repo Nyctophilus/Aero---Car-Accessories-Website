@@ -22,8 +22,9 @@ first Dev session:      02:12 PM    ~   02:23 PM        ~ 00h 00m
 second Dev session:     06:28 PM    ~   06:35 PM        ~ 00h 00m
 third Dev session:      07:47 PM    ~   10:48 PM        ~ 00h 00m
 
-3th Day: 12/2/2022
-first Dev session:      10:40 AM    ~   02:15 AM        ~ 00h 00m
+3th Day: 13/2/2022
+first Dev session:      10:40 AM    ~   02:15 PM        ~ 00h 00m
+second Dev session:     09:25 PM    ~   11:44 PM        ~ 00h 00m
 
 </pre>
 
@@ -43,9 +44,11 @@ first Dev session:      10:40 AM    ~   02:15 AM        ~ 00h 00m
 TODO:
 
 - [x] two headers
-- [ ] headers buttons js click Functionality
-- [ ] header search bar icon .js
-- [ ] landing page text , btn , change dynamically
+- [x] headers buttons js click Functionality
+- [x] header search bar icon .js
+- [x] js. change landing bg on Intervals
+- [ ] js. btn scrollTo top
+- [ ] js. make the email boxHolder "Expandable"
 
 - Original Design: demo.posthemes.com/pos_aero/layout3
   <br>
