@@ -38,3 +38,30 @@ document.querySelector(".hamburger").onclick = () => {
     .querySelector(".hamburger .pop")
     .classList.toggle("active");
 };
+
+// filtering Catergory products
+const lis = document.querySelectorAll(".category .taps li");
+const products = document.querySelectorAll(
+  ".category .products .product"
+);
+
+lis.forEach((tap) => {
+  tap.onclick = () => {
+    console.log(tap.dataset.filter);
+    hideAllProducts();
+    showSelectedProducts(tap.dataset.filter);
+  };
+});
+
+function hideAllProducts() {
+  products.forEach((p) => {
+    p.style.display = `none`;
+  });
+}
+
+function showSelectedProducts(tag) {
+  products.forEach((p) => {
+    if (p.dataset.cat.split(" ").includes(tag))
+      p.style.display = `initial`;
+  });
+}

@@ -19,7 +19,7 @@ html {
 body {
   min-height: 6000px;
   scrollbar-width: thin;
-  scrollbar-color: var(--main-clr) var(--shades-clr);
+  scrollbar-color: var(--main-clr) var(--white);
 }
 /* costumize scrollbar */
 ::-webkit-scrollbar {
@@ -27,12 +27,12 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--shades-clr);
+  background: var(--white);
 }
 ::-webkit-scrollbar-thumb {
   background-color: var(--main-clr);
   border-radius: 6px;
-  border: 3px solid var(--shades-clr);
+  border: 1px solid var(--white);
 }
 
 /* Grid System */
@@ -75,22 +75,77 @@ a {
   text-decoration: none;
   color: initial;
 }
+button {
+  border: none;
+  background-color: transparent;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
 
-/* costum classes */
+/* costum components */
 .header-title {
-  padding: 20px 50px;
-  border: 2px solid;
-  width: fit-content;
-  margin: auto;
+  padding: 0 20px;
   overflow: hidden;
   border-left: none;
   border-right: none;
   position: relative;
 }
+.header-title::before,
+.header-title::after {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: 1;
+  height: 7px;
+  width: 10%;
+  margin: auto;
+  border-top: 1px solid #363c45;
+  border-bottom: 1px solid #363c45;
+  top: 26px;
+  transform: translateX(-50%);
+}
+
+.header-title::before {
+  left: 28%;
+}
+.header-title::after {
+  right: 18%;
+}
+.header-title > span {
+  height: 100%;
+  width: 34.5%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.header-title > span::before,
+.header-title > span::after {
+  content: "";
+  position: absolute;
+  height: 1px;
+  width: 50%;
+  top: 30px;
+  left: -189px;
+  background: black;
+}
+.header-title > span::after {
+  left: unset;
+  right: -189px;
+}
 
 .header-title h3 {
   font-family: "Oswald", sans-serif;
   position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 20px 28px;
+  overflow: hidden;
+  width: fit-content;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  transition: var(--trans);
 }
 .header-title h3::before,
 .header-title h3::after {
@@ -101,38 +156,41 @@ a {
   background-color: var(--white);
   top: 50%;
   border: 2px solid;
-  left: -130px;
+  left: -80px;
   border: 4px solid #363c45;
   transform: translateY(-50%) rotate(45deg)
     skew(26deg, 26deg);
 }
 .header-title h3::after {
-  right: -130px;
   left: unset;
-}
-
-.spec-header {
-  position: relative;
-}
-
-.spec-header span:first-child {
-  height: 2px;
-  width: 100px;
-  color: black;
-  position: absolute;
-  left: 0;
-  display: block;
-  z-index: 333333333333;
-}
-.spec-header span:last-child {
 }
 
 .header-title h3 .header-in i {
   margin: 0 25px;
 }
 
+.header-title h3:hover i {
+  color: var(--main-clr);
+  transition: var(--trans);
+  transform: rotate(0.5turn) scale(1.1);
+  filter: drop-shadow(0 0 2px var(--main-clr));
+}
+.header-title:hover::before,
+.header-title:hover > span::before {
+  left: 42%;
+  opacity: 0;
+  transition: var(--trans);
+}
+.header-title:hover::after,
+.header-title:hover > span::after {
+  right: 32%;
+  opacity: 0;
+  transition: var(--trans);
+}
+
 /* header */
 header .container {
+  color: var(--white);
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -198,7 +256,6 @@ header > div > div:nth-child(3) > div:nth-child(1) {
 .pop-cart > div:last-child button {
   background-color: var(--main-clr);
   color: var(--white);
-  border: none;
   border-radius: 20px;
   padding: 10px 80px;
   filter: drop-shadow(0px 0px 10px var(--main-clr));
@@ -437,6 +494,7 @@ main .landing-page {
   font-weight: normal;
   width: 200px;
   font-size: 17px;
+  color: var(--white);
 }
 .landing-page .container .text p {
   color: var(--p-clr);
@@ -466,6 +524,7 @@ main .landing-page {
   height: 50px;
   width: 50px;
   background: transparent;
+  color: var(--white);
   z-index: 1;
   opacity: 0;
   transition: var(--trans);
@@ -494,4 +553,219 @@ main .landing-page {
 
 .category {
   margin-top: 80px;
+}
+
+.category .txt {
+  margin: 25px auto 50px;
+  text-align: center;
+}
+
+.category .taps {
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+.category .taps li {
+  position: relative;
+  font-weight: bold;
+  font-size: 12px;
+  padding: 20px;
+}
+.category .taps li:not(:last-child):after {
+  position: absolute;
+  content: "";
+  height: 5px;
+  width: 5px;
+  background-color: #e1e1e1;
+  right: -15px;
+  top: 23px;
+  transform: rotate(45deg);
+}
+.category .taps li.active {
+  color: var(--main-clr);
+}
+
+.products {
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(250px, 1fr)
+  );
+  gap: 30px;
+}
+.products .product {
+  border-radius: 30px;
+  border: 1px solid #eeeeee;
+  position: relative;
+}
+.products .product:hover {
+  box-shadow: 1px 5px 6px grey;
+}
+
+/* eye hover */
+.products .product i.fa-eye {
+  position: absolute;
+  left: 20px;
+  top: 55px;
+  z-index: 1;
+  opacity: 0;
+  transition: var(--trans);
+  font-size: 20px;
+}
+.products .product:hover i.fa-eye {
+  opacity: 1;
+}
+.products .product i.fa-eye:hover {
+  color: var(--main-clr);
+}
+.products .product .img-box {
+  position: relative;
+  cursor: pointer;
+}
+.products .product .img-box::before,
+.products .product .img-box::after {
+  content: "NEW";
+  position: absolute;
+  height: fit-content;
+  width: fit-content;
+  background: var(--bg);
+  color: var(--white);
+  padding: 5px 15px;
+  font-size: 10px;
+  left: 15px;
+  top: 15px;
+  border-radius: 5px;
+}
+.products .product .img-box > span {
+  position: absolute;
+  left: 5px;
+  top: 21px;
+  border: 5px solid;
+  border-color: transparent var(--bg) transparent
+    transparent;
+}
+.products .product .img-box > span::before {
+  content: "";
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: #eeeeee;
+  border-radius: 50%;
+  top: -2px;
+  left: 9px;
+}
+.products .product .img-box > span::after {
+  content: "";
+  position: absolute;
+  background: #eeeeee;
+  height: 21px;
+  width: 30px;
+  left: 53px;
+  top: -11px;
+  clip-path: polygon(
+    10% 23%,
+    0 12%,
+    20% 0,
+    20% 100%,
+    0 80%,
+    10% 60%,
+    0 41%
+  );
+}
+.products .product .img-box img {
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+
+.products .product .content {
+  padding: 20px;
+}
+
+.products .product .content p:not(:nth-child(3)) {
+  border-bottom: 1px solid #eeeeee;
+  padding: 18px 0;
+}
+.products .product .content p:first-child {
+  font-size: 14px;
+}
+.products .product .content p:first-child i:first-child {
+  margin-left: 10px;
+}
+.products .product .content p:first-child i {
+  color: #ffcc00;
+  font-size: 12px;
+}
+.products .product .content p:first-child i:last-child {
+  color: #b6b6b6;
+}
+.products .product .content p:nth-child(2) {
+  font-weight: bold;
+  font-size: 13px;
+  cursor: pointer;
+}
+.products .product .content p:nth-child(2):hover {
+  color: var(--main-clr);
+}
+.products .product .content p:nth-child(3) {
+  color: var(--main-clr);
+  font-weight: bold;
+  padding: 20px 0;
+}
+
+.products .product .content button {
+  background-color: #eeeeee;
+  color: var(--p-clr);
+  padding: 10px 10px 10px 35px;
+  border-radius: 25px;
+  width: 100%;
+  margin-top: 20px;
+  font-size: 12px;
+  transition: var(--trans);
+  position: relative;
+  cursor: pointer;
+  font-weight: bold;
+}
+.products .product .content button:hover {
+  background-color: var(--main-clr);
+  color: var(--white);
+}
+.products .product .content button:hover i {
+  filter: hue-rotate(360deg);
+}
+.products .product .content button ion-icon {
+  font-size: 20px;
+  position: absolute;
+  left: 25%;
+  top: 5px;
+}
+.products .product.sale .content .on-sale {
+  height: fit-content;
+  width: fit-content;
+  padding: 3px 5px;
+  margin-right: 10px;
+  border-radius: 3px;
+  display: inline;
+  color: initial;
+  background-color: #ffcc00;
+  font-weight: normal;
+}
+
+.products .product.sale .img-box::after {
+  content: "SALE!";
+  left: unset;
+  right: 20px;
+  background-color: var(--main-clr);
+}
+.products .product.sale span.on-sale {
+  left: unset;
+  border-color: transparent red transparent transparent;
+  right: 78px;
+}
+.products .product.sale span.on-sale::after {
+  z-index: 1;
+  left: 58px;
+}
+.products .product.sale span.on-sale::before {
+  z-index: 1;
 }

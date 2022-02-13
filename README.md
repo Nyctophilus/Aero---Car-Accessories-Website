@@ -17,10 +17,13 @@
 1st Day: 11/2/2022
 first Dev session:      08:12 AM    ~   09:32 AM        ~ 00h 00m
 
-2st Day: 12/2/2022
+2nd Day: 12/2/2022
 first Dev session:      02:12 PM    ~   02:23 PM        ~ 00h 00m
 second Dev session:     06:28 PM    ~   06:35 PM        ~ 00h 00m
 third Dev session:      07:47 PM    ~   10:48 PM        ~ 00h 00m
+
+3th Day: 12/2/2022
+first Dev session:      10:40 AM    ~   02:15 AM        ~ 00h 00m
 
 </pre>
 
