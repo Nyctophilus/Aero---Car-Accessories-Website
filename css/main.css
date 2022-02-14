@@ -15,11 +15,10 @@
 }
 
 html {
-  /* scroll-behavior: smooth; */
+  scroll-behavior: smooth;
 }
 
 body {
-  min-height: 6000px;
   scrollbar-width: thin;
   scrollbar-color: var(--main-clr) var(--white);
 }
@@ -287,13 +286,15 @@ header > div > div:nth-child(3) > div:nth-child(1) {
   justify-content: center;
   padding: 40px;
 }
-.pop-cart > div:last-child button {
+.pop-cart > div:last-child button,
+.blog .posts .post button:hover {
   background-color: var(--main-clr);
   color: var(--white);
   border-radius: 20px;
   padding: 10px var(--pad);
   filter: drop-shadow(0px 0px 10px var(--main-clr));
   font-size: 14px;
+  font-weight: bold;
 }
 
 header > div > div:nth-child(3) > div:nth-child(1)::after {
@@ -900,4 +901,224 @@ section.best-seller
   > p:nth-child(1)
   > i:nth-child(4) {
   color: #b6b6b6;
+}
+
+/* Latest Blog */
+
+.blog {
+  margin: var(--pad) 0;
+}
+.blog .posts {
+  display: grid;
+  gap: 2rem;
+  place-items: center;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(33rem, 1fr)
+  );
+}
+
+.blog .posts .post {
+  display: flex;
+  align-items: center;
+}
+.blog .posts .post .txt {
+  padding-left: 20px;
+}
+.blog .posts .post .txt h1 {
+  color: var(--main-clr);
+  font-size: 2.5rem;
+}
+.blog .posts .post .txt h1 small {
+  font-size: 0.75rem;
+}
+
+.blog .posts .post .txt h3 {
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.blog .posts .post .txt p:nth-of-type(1) {
+  line-height: 2;
+  border-bottom: 1px solid #5a606920;
+}
+.blog .posts .post .txt p:nth-of-type(1) span {
+  color: var(--main-clr);
+}
+
+.blog .posts .post .txt p:nth-of-type(2) {
+  padding-top: 20px;
+}
+
+.blog .posts .post button {
+  background-color: #5a606920;
+  color: #5a6069;
+  font-weight: bold;
+}
+.blog .posts .post button:hover,
+.blog .posts .post button {
+  padding: 13px 55px;
+  border-radius: 40px;
+  font-size: 12px;
+  margin-top: 39px;
+}
+
+/* SUBCRIBERS */
+.blog .container {
+  position: relative;
+}
+.blog .container::after {
+  position: absolute;
+  content: "";
+  height: 1px;
+  width: 100%;
+  background-color: #5a606920;
+  bottom: -8rem;
+}
+
+.sub {
+  margin: calc(var(--pad) * 3) 0 var(--pad);
+  text-align: center;
+}
+.sub h3 {
+  font-weight: normal;
+  font-size: 13px;
+  color: var(--p-clr);
+  letter-spacing: 0.2em;
+}
+.sub h3 span {
+  color: var(--main-clr);
+}
+.sub h1 {
+  margin: 10px 0 0;
+  color: var(--bg);
+  font-size: 20px;
+  letter-spacing: 0.2em;
+  line-height: 24px;
+}
+.sub p:first-of-type {
+  margin-top: 20px;
+}
+.sub p {
+  line-height: 2;
+  color: var(--p-clr);
+}
+.sub input {
+  margin-top: 40px;
+  border: none;
+  background-color: #5a606920;
+  border-radius: 20px;
+  width: 50%;
+  padding: 20px;
+  transition: var(--trans);
+  outline: none;
+}
+.sub input.expand {
+  width: 0%;
+}
+.sub a {
+  border-radius: 50%;
+  height: 55px;
+  width: 55px;
+  background-color: var(--main-clr);
+  position: absolute;
+  top: 43px;
+  right: 50%;
+  transform: translateX(280px);
+  display: grid;
+  place-items: center;
+  transition: var(--trans);
+}
+.sub a.expand {
+  transform: translateX(25px);
+}
+.sub .subcribe {
+  position: relative;
+}
+.sub a i {
+  font-size: 20px;
+  color: white;
+}
+.sub .subcribe a:hover {
+  filter: drop-shadow(0 0 5px var(--main-clr));
+}
+
+/* footer */
+
+footer {
+  background-image: url(http://demo.posthemes.com/pos_aero/layout3/themes/pos_aero3/assets/css/ft_bg.jpg);
+}
+footer .foot {
+  display: flex;
+  justify-content: center;
+  color: grey;
+  padding: 90px 0 60px;
+  gap: 35px;
+  font-size: 13px;
+}
+footer .box {
+  flex-basis: 35%;
+}
+footer .box p:nth-of-type(1) {
+  margin: 30px 0;
+  line-height: 24px;
+}
+footer .box p:not(:first-of-type) {
+  color: var(--white);
+  margin: 20px 0;
+  width: 75%;
+}
+footer .box p:not(:first-of-type) i,
+footer .box p:not(:first-of-type) ion-icon {
+  margin-right: 10px;
+  color: var(--main-clr);
+}
+footer .details {
+  border-left: 1px solid #5a606920;
+  padding-left: 17px;
+}
+footer .details h3 {
+  color: white;
+  margin-bottom: 40px;
+  font-size: 1.5em;
+}
+footer .details p {
+  margin-bottom: 20px;
+}
+
+footer .footest {
+  color: var(--p-clr);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 0;
+  border-top: 1px solid #5a606920;
+}
+footer .footest p {
+  display: initial;
+  margin-right: 15px;
+}
+footer .footest p span {
+  color: var(--main-clr);
+}
+footer .footest i {
+  margin-left: 15px;
+}
+
+/* Sticky ToUp btn */
+#sticky-up {
+  position: fixed;
+  background-color: var(--bg);
+  bottom: 50px;
+  right: 50px;
+  border-radius: 50%;
+  padding: 20px;
+  color: var(--white);
+  transition: var(--trans);
+  opacity: 0;
+}
+
+#sticky-up:hover {
+  background-color: var(--main-clr);
+  filter: drop-shadow(0 0 8px var(--main-clr));
 }

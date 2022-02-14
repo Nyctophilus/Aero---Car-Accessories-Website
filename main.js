@@ -83,3 +83,29 @@ function showSelectedProducts(tag) {
       p.style.display = `initial`;
   });
 }
+
+// Expandable Email input
+
+const mailInput = document.querySelector(
+  ".sub .subcribe input"
+);
+const mailBtn = document.querySelector(".sub .subcribe a");
+
+mailBtn.onclick = () => {
+  // mailInput.style.width = `5%`;
+  // mailBtn.style.transform = `translateX(25px)`;
+
+  mailBtn.classList.toggle("expand");
+  mailInput.classList.toggle("expand");
+};
+
+// scrollTo top Sticky btn
+window.addEventListener("scroll", () => {
+  window.scrollY > 500
+    ? (document.getElementById(
+        "sticky-up"
+      ).style.opacity = `1`)
+    : (document.getElementById(
+        "sticky-up"
+      ).style.opacity = `0`);
+});

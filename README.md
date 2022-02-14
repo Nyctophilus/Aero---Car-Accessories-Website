@@ -15,20 +15,23 @@
 
 <pre>
 1st Day: 11/2/2022
-first Dev session:      08:12 AM    ~   09:32 AM        ~ 00h 00m
+first Dev session:      08:12 AM    ~   09:32 AM        ~ 01h 20m
 
 2nd Day: 12/2/2022
-first Dev session:      02:12 PM    ~   02:23 PM        ~ 00h 00m
-second Dev session:     06:28 PM    ~   06:35 PM        ~ 00h 00m
-third Dev session:      07:47 PM    ~   10:48 PM        ~ 00h 00m
+first Dev session:      02:12 PM    ~   02:23 PM        ~ 00h 11m
+second Dev session:     06:28 PM    ~   06:35 PM        ~ 00h 07m
+third Dev session:      07:47 PM    ~   10:48 PM        ~ 03h 01m
 
 3th Day: 13/2/2022
-first Dev session:      10:40 AM    ~   02:15 PM        ~ 00h 00m
-second Dev session:     09:25 PM    ~   11:44 PM        ~ 00h 00m
+first Dev session:      10:40 AM    ~   02:15 PM        ~ 03h 35m
+second Dev session:     09:25 PM    ~   11:44 PM        ~ 02h 19m
+
+4th Day: 14/2/2022
+first Dev session:      12:32 AM    ~   03:33 AM        ~ 03h 01m
 
 </pre>
 
-<pre><q>Challenge Completed in   00h 00m</q></pre>
+<pre><q>Challenge Completed in   13h 34m</q></pre>
 
 <br>
 <br>
@@ -47,8 +50,9 @@ TODO:
 - [x] headers buttons js click Functionality
 - [x] header search bar icon .js
 - [x] js. change landing bg on Intervals
-- [ ] js. btn scrollTo top
-- [ ] js. make the email boxHolder "Expandable"
+- [x] js. btn scrollTo top
+- [x] js. make the email boxHolder "Expandable"
+- [x] tap icon logo
 
 - Original Design: demo.posthemes.com/pos_aero/layout3
   <br>
