@@ -1047,6 +1047,8 @@ section.best-seller
 
 footer {
   background-image: url(http://demo.posthemes.com/pos_aero/layout3/themes/pos_aero3/assets/css/ft_bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 footer .foot {
   display: flex;
@@ -1058,6 +1060,18 @@ footer .foot {
 }
 footer .box {
   flex-basis: 35%;
+}
+@media (max-width: 768px) {
+  footer .foot {
+    flex-wrap: wrap;
+    justify-content: unset;
+  }
+  footer .box {
+    flex-basis: 100%;
+  }
+  footer .details {
+    flex-basis: 18%;
+  }
 }
 footer .box p:nth-of-type(1) {
   margin: 30px 0;
@@ -1101,8 +1115,16 @@ footer .footest p {
 footer .footest p span {
   color: var(--main-clr);
 }
-footer .footest i {
+footer .footest i:not(:first-of-type) {
   margin-left: 15px;
+}
+
+@media (max-width: 768px) {
+  footer .footest {
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
 }
 
 /* Sticky ToUp btn */
