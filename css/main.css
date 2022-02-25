@@ -459,10 +459,11 @@ header
   .fixed-head .container .btns {
     padding: clamp(2vh, 1.5vh, 6vh);
     flex-wrap: wrap;
+    justify-content: center;
   }
 
   .fixed-head .container .btns button a {
-    font-size: 2vw;
+    font-size: 3vw;
   }
 }
 
@@ -478,6 +479,24 @@ header
   button:nth-of-type(3):hover
   .pop {
   display: flex;
+}
+
+@media (max-width: 530px) {
+  .fixed-head
+    .container
+    .btns
+    button:nth-of-type(2):hover
+    .pop,
+  .fixed-head
+    .container
+    .btns
+    button:nth-of-type(3):hover
+    .pop {
+    flex-direction: column;
+  }
+  .pop .text:first-child {
+    border-bottom: 2px solid #ccc;
+  }
 }
 /* popups */
 .fixed-head .container .btns button .pop {
