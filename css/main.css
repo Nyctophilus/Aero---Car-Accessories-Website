@@ -155,6 +155,12 @@ img {
   border-bottom: 1px solid;
   transition: var(--trans);
 }
+
+@media (max-width: 450px) {
+  .header-title h3 {
+    font-size: 3.5vw;
+  }
+}
 .header-title h3::before,
 .header-title h3::after {
   content: "";
@@ -256,7 +262,11 @@ header > div > div:nth-child(3) > div:nth-child(1) {
   position: relative;
   font-size: 24px;
 }
-
+@media (max-width: 580px) {
+  header .container img {
+    display: none;
+  }
+}
 /* cart popup */
 .pop-cart {
   position: absolute;
@@ -399,7 +409,7 @@ header
 
 @media (max-width: 1199px) {
   .fixed-head {
-    top: 80vh;
+    top: 65vh;
   }
 }
 
@@ -415,7 +425,7 @@ header
 }
 .fixed-head .container .btns ion-icon {
   margin-left: 5px;
-  position: relative;
+  position: absolute;
   top: 2px;
 }
 .fixed-head .container .btns button {
@@ -436,9 +446,24 @@ header
   position: absolute;
   height: 90px;
   width: 100px;
-  background-color: red;
+  background-color: var(--main-clr);
   left: 50%;
-  transform: translate(-50%, -46%) skewX(-30deg);
+  transform: translate(-41%, -46%) skewX(-30deg);
+}
+
+@media (max-width: 580px) {
+  .fixed-head .container .btns button.active::before,
+  .fixed-head .container .btns button:hover::before {
+    height: clamp(6vh, 7vh, 8vh);
+  }
+  .fixed-head .container .btns {
+    padding: clamp(2vh, 1.5vh, 6vh);
+    flex-wrap: wrap;
+  }
+
+  .fixed-head .container .btns button a {
+    font-size: 2vw;
+  }
 }
 
 /* hover to popup */
@@ -462,9 +487,10 @@ header
   background-color: var(--white);
   gap: 65px;
   text-align: left;
-  padding: 40px 100px 40px 30px;
+  padding: 3vh clamp(2vh, 1.5vh, 6vh);
   display: none;
   transition: var(--trans);
+  background-color: #eee;
 }
 .fixed-head .container .btns button .pop h6 {
   margin-bottom: 15px;
@@ -484,8 +510,19 @@ main {
 main .landing-page {
   min-height: 100vh;
   background-image: url(http://demo.posthemes.com/pos_aero/layout3/modules/posslideshows/images/1bd5364ecde77c8a9f166c7d0420c216ef41df9f_3.jpg);
-  background-size: contain;
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
+}
+
+@media (max-width: 580px) {
+  main {
+    top: -210px !important;
+  }
+  /* main .landing-page {
+    background-position: center;
+    background-size: cover;
+  } */
 }
 
 .landing-page .container {
@@ -549,12 +586,15 @@ main .landing-page {
     flex-wrap: wrap;
   }
 }
-.gallery .container div {
+.gallery .container div,
+.blog .posts .post > div:first-child {
   position: relative;
   z-index: 1;
 }
 .gallery .container div::before,
-.gallery .container div::after {
+.gallery .container div::after,
+.blog .posts .post > div:first-child:before,
+.blog .posts .post > div:first-child:after {
   content: "";
   position: absolute;
   height: 50px;
@@ -565,13 +605,15 @@ main .landing-page {
   opacity: 0;
   transition: var(--trans);
 }
-.gallery .container div::before {
+.gallery .container div::before,
+.blog .posts .post > div:first-child:before {
   border-top: 1px solid;
   border-left: 1px solid;
   left: 20px;
   top: 20px;
 }
-.gallery .container div::after {
+.gallery .container div::after,
+.blog .posts .post > div:first-child:after {
   border-bottom: 1px solid;
   border-right: 1px solid;
   right: 20px;
@@ -579,7 +621,9 @@ main .landing-page {
 }
 
 .gallery .container div:hover::before,
-.gallery .container div:hover::after {
+.gallery .container div:hover::after,
+.blog .posts .post > div:first-child:hover::before,
+.blog .posts .post > div:first-child:hover::after {
   opacity: 1;
   height: 30px;
   width: 30px;
@@ -799,7 +843,8 @@ main .landing-page {
 }
 .products .product.sale span.on-sale {
   left: unset;
-  border-color: transparent red transparent transparent;
+  border-color: transparent var(--main-clr) transparent
+    transparent;
   right: 78px;
 }
 .products .product.sale span.on-sale::after {
@@ -832,6 +877,12 @@ main .landing-page {
   padding: 20px 0;
   justify-content: center;
   position: relative;
+
+  transition: filter var(--trans);
+}
+.product-grid .box:hover {
+  filter: contrast(1.2);
+  padding-left: 5px;
 }
 @media (max-width: 1199px) {
   .product-grid .box {
@@ -907,6 +958,9 @@ section.best-seller
 
 .blog {
   margin: var(--pad) 0;
+  overflow: hidden;
+  background-color: #eee;
+  padding: var(--pad-res) 0;
 }
 .blog .posts {
   display: grid;
@@ -917,10 +971,28 @@ section.best-seller
     minmax(33rem, 1fr)
   );
 }
+@media (max-width: 540px) {
+  .blog .posts {
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(20rem, 1fr)
+    );
+  }
+}
 
 .blog .posts .post {
   display: flex;
   align-items: center;
+}
+
+@media (max-width: 767px) {
+  .blog .posts .post {
+    flex-direction: column;
+  }
+  .blog .posts .post .txt {
+    text-align: center;
+    width: 65%;
+  }
 }
 .blog .posts .post .txt {
   padding-left: 20px;
@@ -963,7 +1035,6 @@ section.best-seller
   margin-top: 39px;
 }
 
-/* SUBCRIBERS */
 .blog .container {
   position: relative;
 }
@@ -976,8 +1047,9 @@ section.best-seller
   bottom: -8rem;
 }
 
+/* SUBCRIBERS */
 .sub {
-  margin: calc(var(--pad) * 3) 0 var(--pad);
+  margin: var(--pad) 0;
   text-align: center;
 }
 .sub h3 {
@@ -988,6 +1060,7 @@ section.best-seller
 }
 .sub h3 span {
   color: var(--main-clr);
+  font-weight: bold;
 }
 .sub h1 {
   margin: 10px 0 0;
@@ -1010,30 +1083,34 @@ section.best-seller
   border-radius: 20px;
   width: 50%;
   padding: 20px;
-  transition: var(--trans);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all var(--trans);
   outline: none;
 }
 .sub input.expand {
   width: 0%;
+  background-color: transparent;
 }
 .sub a {
   border-radius: 50%;
-  height: 55px;
-  width: 55px;
+  height: 57px;
+  width: 57px;
   background-color: var(--main-clr);
   position: absolute;
-  top: 43px;
-  right: 50%;
-  transform: translateX(280px);
+  top: 42px;
+  right: 24%;
   display: grid;
   place-items: center;
   transition: var(--trans);
 }
 .sub a.expand {
-  transform: translateX(25px);
+  right: 50%;
 }
 .sub .subcribe {
   position: relative;
+  min-height: 108px;
 }
 .sub a i {
   font-size: 20px;
@@ -1114,9 +1191,15 @@ footer .footest p {
 }
 footer .footest p span {
   color: var(--main-clr);
+  font-weight: bold;
+}
+
+footer .footest i:hover {
+  color: var(--main-clr);
 }
 footer .footest i:not(:first-of-type) {
   margin-left: 15px;
+  margin-top: 10px;
 }
 
 @media (max-width: 768px) {
@@ -1124,6 +1207,7 @@ footer .footest i:not(:first-of-type) {
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
+    text-align: center;
   }
 }
 
@@ -1138,6 +1222,7 @@ footer .footest i:not(:first-of-type) {
   color: var(--white);
   transition: var(--trans);
   opacity: 0;
+  z-index: 99;
 }
 
 #sticky-up:hover {

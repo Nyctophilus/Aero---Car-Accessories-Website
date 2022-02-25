@@ -65,11 +65,18 @@ const products = document.querySelectorAll(
 
 lis.forEach((tap) => {
   tap.onclick = () => {
-    console.log(tap.dataset.filter);
+    setActiveTap(tap);
     hideAllProducts();
     showSelectedProducts(tap.dataset.filter);
   };
 });
+
+function setActiveTap(activeTap) {
+  lis.forEach((li) => {
+    li.classList.remove("active");
+    activeTap.classList.add("active");
+  });
+}
 
 function hideAllProducts() {
   products.forEach((p) => {
@@ -100,12 +107,16 @@ mailBtn.onclick = () => {
 };
 
 // scrollTo top Sticky btn
+const topBtn = document.getElementById("sticky-up");
+
 window.addEventListener("scroll", () => {
   window.scrollY > 500
-    ? (document.getElementById(
-        "sticky-up"
-      ).style.opacity = `1`)
-    : (document.getElementById(
-        "sticky-up"
-      ).style.opacity = `0`);
+    ? (topBtn.style.opacity = `1`)
+    : (topBtn.style.opacity = `0`);
 });
+topBtn.onclick = () => {
+  window.scrollTo({
+    behavior: "smooth",
+    top: 0,
+  });
+};

@@ -53,7 +53,7 @@ TODO:
 - [x] js. btn scrollTo top
 - [x] js. make the email boxHolder "Expandable"
 - [x] tap icon logo
-- [ ] fix responsive probs
+- [x] fix responsive probs ----> Fully Responsive!🥳
 
 - Original Design: demo.posthemes.com/pos_aero/layout3
   <br>
