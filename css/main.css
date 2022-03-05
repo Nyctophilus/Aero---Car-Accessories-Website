@@ -22,6 +22,9 @@ body {
   scrollbar-width: thin;
   scrollbar-color: var(--main-clr) var(--white);
 }
+button {
+  cursor: pointer;
+}
 /* costumize scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
@@ -236,7 +239,6 @@ header .container {
   position: relative;
   top: 50px;
   align-content: flex-end;
-  cursor: pointer;
 }
 
 header .container > div {
@@ -266,6 +268,10 @@ header > div > div:nth-child(3) > div:nth-child(1) {
   header .container img {
     display: none;
   }
+}
+
+header .container > div > div {
+  cursor: pointer;
 }
 /* cart popup */
 .pop-cart {
@@ -665,6 +671,7 @@ main .landing-page {
   font-weight: bold;
   font-size: 12px;
   padding: 20px;
+  cursor: pointer;
 }
 .category .taps li:not(:last-child):after {
   position: absolute;
@@ -878,12 +885,12 @@ main .landing-page {
 
 .best-seller {
   padding: var(--pad) 0;
-  background-image: url(http://demo.posthemes.com/pos_aero/layout3/themes/pos_aero3/assets/css/bs_bg.jpg);
+  background: url(http://demo.posthemes.com/pos_aero/layout3/themes/pos_aero3/assets/css/bs_bg.jpg)
+    no-repeat center / cover fixed;
 }
 
 .product-grid {
   display: grid;
-
   column-gap: 30px;
   grid-template-columns: repeat(
     auto-fill,
@@ -896,7 +903,6 @@ main .landing-page {
   padding: 20px 0;
   justify-content: center;
   position: relative;
-
   transition: filter var(--trans);
 }
 .product-grid .box:hover {
@@ -1123,6 +1129,7 @@ section.best-seller
   display: grid;
   place-items: center;
   transition: var(--trans);
+  cursor: pointer;
 }
 .sub a.expand {
   right: 50%;
@@ -1183,6 +1190,9 @@ footer .box p:not(:first-of-type) ion-icon {
   margin-right: 10px;
   color: var(--main-clr);
 }
+footer .box p a {
+  color: var(--white);
+}
 footer .details {
   border-left: 1px solid #5a606920;
   padding-left: 17px;
@@ -1212,7 +1222,9 @@ footer .footest p span {
   color: var(--main-clr);
   font-weight: bold;
 }
-
+footer .footest i {
+  cursor: pointer;
+}
 footer .footest i:hover {
   color: var(--main-clr);
 }

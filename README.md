@@ -54,6 +54,11 @@ TODO:
 - [x] js. make the email boxHolder "Expandable"
 - [x] tap icon logo
 - [x] fix responsive probs ----> Fully Responsive!🥳
+- [ ] image popup on img.click
+
+<br>
+<br>
+<br>
 
 - Original Design: demo.posthemes.com/pos_aero/layout3
   <br>
